@@ -25,10 +25,18 @@ class App extends Component {
     return (
       <React.Fragment>
         <div className="container p-5 d-flex align-items-center justify-content-center text-center" style={{minHeight:'100vh'}}>
-          <div>
-            <input type="number" onChange={this.handleChange}/>
-            <div className="py-1">
-              <button onClick={this.handleSubmitMoney}>Change This</button>
+          <div className="text-center">
+            <div className="input-group mx-auto mb-1" style={{width:300}}>
+              <input className="form-control" type="number" 
+                onChange={this.handleChange}
+              />
+              <div className="input-group-append">
+                <button type="button" className="btn btn-success btn-block" 
+                  onClick={this.handleSubmitMoney} disabled={inputMoney.length>0 ? false : true}
+                >
+                  Change This
+                </button>
+              </div>
             </div>
             <div>You put ${inputMoney}</div>
             <div className="py-3">
@@ -41,7 +49,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="w-100 text-center position-fixed" style={{bottom:0}}>created by Chanatorn Suphap</div>
+        <div className="w-100 text-center text-muted position-fixed" style={{bottom:0}}>created by Chanatorn Suphap</div>
       </React.Fragment>
   )}
 }

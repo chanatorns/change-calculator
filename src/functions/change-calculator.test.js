@@ -15,3 +15,7 @@ test('.99 change to 0.25$ x3, 0.1$ x2, 0.01$ x4', () => {
 test('.995 change to 0.25$ x3, 0.1$ x2, 0.01$ x4', () => {
   expect(changeCalculator(0.995)).toEqual([{value:0.25,quantity:3},{value:0.1,quantity:2},{value:0.01,quantity:4}])
 });
+
+test('0 change to none', () => {
+  expect(changeCalculator(0)).toEqual([])
+});

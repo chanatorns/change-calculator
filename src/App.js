@@ -23,23 +23,26 @@ class App extends Component {
   render() {  
     let { yourChange, inputMoney } = this.state
     return (
-      <div className="container p-5 d-flex align-items-center justify-content-center text-center" style={{minHeight:'100vh'}}>
-        <div>
-          <input type="number" onChange={this.handleChange}/>
-          <div className="py-1">
-            <button onClick={this.handleSubmitMoney}>Change This</button>
-          </div>
-          <div>You put ${inputMoney}</div>
-          <div className="py-3">
-            {
-              yourChange.length > 0 ?
-                <h1>Your change is {renderTextResult(yourChange)}</h1>       
-                :
-                <h1>Your change is nothing.</h1>
-            }
+      <React.Fragment>
+        <div className="container p-5 d-flex align-items-center justify-content-center text-center" style={{minHeight:'100vh'}}>
+          <div>
+            <input type="number" onChange={this.handleChange}/>
+            <div className="py-1">
+              <button onClick={this.handleSubmitMoney}>Change This</button>
+            </div>
+            <div>You put ${inputMoney}</div>
+            <div className="py-3">
+              {
+                yourChange.length > 0 ?
+                  <h2>Your change is {renderTextResult(yourChange)}</h2>       
+                  :
+                  <h2>Your change is nothing.</h2>
+              }
+            </div>
           </div>
         </div>
-      </div>
+        <div className="w-100 text-center position-fixed" style={{bottom:0}}>created by Chanatorn Suphap</div>
+      </React.Fragment>
   )}
 }
 

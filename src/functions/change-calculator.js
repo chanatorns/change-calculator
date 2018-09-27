@@ -6,7 +6,6 @@ const changeCalculator = (inputMoney) => {
   moneyValueConfig.forEach(value => {
     value *= 100
     let quantity = Math.floor(money/value)
-    console.log(quantity,money,value)
     if(quantity){
       let change = {value:value/100,quantity:quantity}
       changes.push(change)

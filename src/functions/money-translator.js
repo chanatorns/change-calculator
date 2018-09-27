@@ -14,4 +14,15 @@ const dollarFormat = (value, s) => {
   }
 }
 
-export { dollarFormat }
+const renderTextResult = (changes) => {
+  let str = ""
+  changes.forEach((v,i) => {
+    str += ` ${v.quantity} ${dollarFormat(v.value,v.quantity)}`
+    if(i !== changes.length-1){
+      str += `,`
+    }
+  })
+  return str + "."
+}
+
+export { dollarFormat, renderTextResult }
